@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta http-equiv="content-type" 
+    content="text/html; charset=UTF-8">
+  <title><%= title %></title>
+  <link rel="stylesheet" 
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  crossorigin="anonymous">
+  <link rel='stylesheet' 
+    href='/stylesheets/style.css' />
+</head>
+
+<body class="container">
+
+  <header>
+    <h1 class="display-4">
+      <%= title %></h1>
+  </header>
+  <div role="main">
+    <form method="post" action="/equip/add">
+      <h2><%=userName%></h2>
+      <p userId="userId"></p>
+      <div class="form-group">
+        <input type="hidden" id="userId" name="userId"  value=<%=userId%>
+        <label for="tno">TELNO</label>
+        <td><input type="number" name="tno" id="tno" 
+          class="form-control">
+          
+        <!--<label for="userId">USERID</label>-->
+        <!--<td><input type="number" name="userId" id="userId" value=<%=userId%>-->
+        <!--  class="form-control">-->
+          
+      </div>
+      <input type="submit" value="作成" 
+        class="btn btn-primary">
+    </form>
+  </div>
+</body>
+
+</html>

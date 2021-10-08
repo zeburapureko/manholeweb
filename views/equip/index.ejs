@@ -24,15 +24,8 @@
       <tr>
         <% var obj = content[i]; %>
         <th><%= obj.id %></th>
-        
-        <td class="col-2">
-        <a class="text-dark" href="/equip/home/<%=obj.name %>/<%=obj.id %>/0">
-        <%= obj.name %></a>
-        </td>
-        
-        <!--<td><%= obj.name %></td>-->
-        <td><%= obj.mail %></td>
-        <td><%= obj.telno %></td>
+        <td><%= obj.userId %></td>
+        <td><%= obj.tno %></td>
       </tr>
       <% } %>
     </table>

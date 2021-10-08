@@ -17,22 +17,18 @@
   <header>
     <h1 class="display-4">
       <%= title %></h1>
+      <h2><%= userName %></h2>
   </header>
   <div role="main">
+    
     <table class="table">
+        <p class="mt-4"><a href="/equip/add/<%=userName %>/<%=userId %>">&lt;&lt; 端末追加&gt;&gt;</a></p>
       <% for(var i in content) { %>
       <tr>
         <% var obj = content[i]; %>
         <th><%= obj.id %></th>
-        
-        <td class="col-2">
-        <a class="text-dark" href="/equip/home/<%=obj.name %>/<%=obj.id %>/0">
-        <%= obj.name %></a>
-        </td>
-        
         <!--<td><%= obj.name %></td>-->
-        <td><%= obj.mail %></td>
-        <td><%= obj.telno %></td>
+        <td><%= obj.tno %></td>
       </tr>
       <% } %>
     </table>
