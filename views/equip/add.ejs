@@ -21,15 +21,17 @@
   <div role="main">
     <form method="post" action="/equip/add">
       <h2><%=userName%></h2>
-      <p userId="userId"></p>
+      
       <div class="form-group">
-        <input type="hidden" id="userId" name="userId"  value=<%=userId%>
+        <input type="hidden" id="userId" name="userId" value=<%=userId%>> 
+        <input type="hidden" id="userName" name="userName" value=<%=userName%>>
+        
         <label for="tno">TELNO</label>
         <td><input type="number" name="tno" id="tno" 
           class="form-control">
           
-        <!--<label for="userId">USERID</label>-->
-        <!--<td><input type="number" name="userId" id="userId" value=<%=userId%>-->
+        <!--<label for="userName">USERNAME</label>-->
+        <!--<td><input type="text" name="userName" id="userName" value=<%=userName%>-->
         <!--  class="form-control">-->
           
       </div>

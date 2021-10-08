@@ -4,10 +4,17 @@ const db = require('../models/index');
 
 const pnum=10;
 
-
 /* GET home page. */
 router.get('/',(req, res, next)=> {
-  db.Equip.findAll().then(equip => {
+  db.Equip.findAll(
+    {
+      include: [{
+      model: db.User,
+      required: true
+      }]
+    }
+    
+    ).then(equip => {
     var data = {
       title: 'equip/Index',
       content: equip
@@ -34,7 +41,9 @@ router.post('/add',(req, res, next)=> {
       tno: req.body.tno
     }))
     .then(usr => {
-      res.redirect('/equip/home');
+      res.redirect('/equip/home/'+req.body.userName+ '/' +req.body.userId+'/0');
+      // res.redirect('/equip/home/'+);
+
     });
 });
 
