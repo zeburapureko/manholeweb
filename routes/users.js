@@ -27,7 +27,7 @@ router.post('/add',(req, res, next)=> {
       name: req.body.name,
       pass: req.body.pass,
       mail: req.body.mail,
-      telno: req.body.telno
+      note: req.body.note
     }))
     .then(usr => {
       res.redirect('/users');
