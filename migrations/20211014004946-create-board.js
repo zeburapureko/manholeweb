@@ -8,12 +8,19 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      equipId: {
+        type: Sequelize.INTEGER
+      },
       tno: {
         type: Sequelize.STRING
       },
       mess: {
         type: Sequelize.STRING
       },
+      dt:{
+        type:Sequelize.INTEGER
+      },
+        
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

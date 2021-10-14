@@ -10,13 +10,15 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // Board.belongsTo(models.Equip)
+      Board.belongsTo(models.Equip)
       // define association here
     }
   };
   Board.init({
+    equipId: DataTypes.INTEGER,
     tno: DataTypes.STRING,
-    mess: DataTypes.STRING
+    mess: DataTypes.STRING,
+    dt:DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Board',

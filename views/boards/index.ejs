@@ -21,21 +21,7 @@
   <div role="main">
     <table class="table">
       <% for(var i in content) { %>
-      <tr>
-        <% var obj = content[i]; %>
-        <th><%= obj.id %></th>
-        <td><%= obj.mess %></td>
-        <td><%= obj.tno %></td>
-  
-        <%
-        var d = new Date(obj.createdAt);
-        var dstr = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + 
-        d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes() + 
-        ':' + d.getSeconds();
-        %>
-        <td class="col-3"><%= dstr %></td>
-  
-      </tr>
+      <%- include('data_item', {val:content[i]}) %>
       <% } %>
     </table>
   </div>

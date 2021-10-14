@@ -5,7 +5,15 @@ const db = require('../models/index');
 
 /* GET home page. */
 router.get('/',(req, res, next)=> {
-  db.Board.findAll().then(boards => {
+  db.Board.findAll(
+    {
+    include: [{
+      model: db.Equip,
+      required: true
+      },
+      ]
+    }
+    ).then(boards => {
     var data = {
       title: 'Boards/Index',
       content: boards
@@ -13,6 +21,17 @@ router.get('/',(req, res, next)=> {
     res.render('boards/index', data);
   });
 });
+
+/* GET home page. */
+// router.get('/',(req, res, next)=> {
+//   db.Board.findAll().then(boards => {
+//     var data = {
+//       title: 'Boards/Index',
+//       content: boards
+//     };
+//     res.render('boards/index', data);
+//   });
+// });
 
 router.get('/add',(req,res,next)=>{
   var data = {
@@ -25,7 +44,9 @@ router.post('/add',(req, res, next)=> {
   db.sequelize.sync()
     .then(() => db.Board.create({
       mess: req.body.mess,
-      tno: req.body.tno
+      tno: req.body.tno,
+      equipId:req.body.equipId,
+      dt:req.body.dt
     }))
     .then(board => {
       res.redirect('/boards');
